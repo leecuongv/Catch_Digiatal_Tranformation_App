@@ -21,7 +21,7 @@ class Game:
         self.sounds = {}
         self.sounds["slap"] = pygame.mixer.Sound(f"Assets/Sounds/slap.wav")
         self.sounds["slap"].set_volume(SOUNDS_VOLUME)
-        self.sounds["screaming"] = pygame.mixer.Sound(f"Assets/Sounds/screaming.wav")
+        self.sounds["screaming"] = pygame.mixer.Sound(f"Assets/Sounds/meow.wav")
         self.sounds["screaming"].set_volume(SOUNDS_VOLUME)
 
 
