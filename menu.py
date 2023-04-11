@@ -16,7 +16,7 @@ class Menu:
         self.background.draw(self.surface)
         # draw title
         ui.draw_text(self.surface, GAME_TITLE, (SCREEN_WIDTH//2, 120), COLORS["title"], font=FONTS["big"],
-                    shadow=True, shadow_color=(255,255,255), pos_mode="center")
+                    shadow=False, shadow_color=(255,255,255), pos_mode="center")
 
 
     def update(self):
@@ -25,5 +25,6 @@ class Menu:
             return "game"
 
         if ui.button(self.surface, 320+BUTTONS_SIZES[1]*1.5, "Quit", click_sound=self.click_sound):
+            print("quit btn press")
             pygame.quit()
             sys.exit()

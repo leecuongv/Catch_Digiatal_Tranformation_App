@@ -28,12 +28,13 @@ def button(surface, pos_y, text=None, click_sound=None):
     else:
         color = COLORS["buttons"]["default"]
 
-    pygame.draw.rect(surface, COLORS["buttons"]["shadow"], (rect.x - 6, rect.y - 6, rect.w, rect.h), border_radius=20) # draw the shadow rectangle
+    #pygame.draw.rect(surface, COLORS["buttons"]["shadow"], (rect.x - 6, rect.y - 6, rect.w, rect.h), border_radius=20) # draw the shadow rectangle
+    pygame.draw.rect(surface, COLORS["buttons"]["shadow"], (rect.x - 6, rect.y - 6, rect.w, rect.h), border_radius=20)
     pygame.draw.rect(surface, color, rect, border_radius=20) # draw the rectangle
     # draw the text
     if text is not None:
         draw_text(surface, text, rect.center, COLORS["buttons"]["text"], pos_mode="center",
-                    shadow=True, shadow_color=COLORS["buttons"]["shadow"])
+                    shadow=False, shadow_color=COLORS["buttons"]["shadow"])
 
     if on_button and pygame.mouse.get_pressed()[0]: # if the user press on the button
         if click_sound is not None: # play the sound if needed

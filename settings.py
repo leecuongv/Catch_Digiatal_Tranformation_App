@@ -34,12 +34,12 @@ ENVELOPES_MOVE_SPEED = {"min": 1, "max": 5}
 CAT_PENALITY = 2 # will remove X of the score of the player (if he kills a cat)
 
 # colors
-COLORS = {"title": (38, 61, 39), "score": (38, 61, 39), "timer": (38, 61, 39),
-            "buttons": {"default": (56, 67, 209), "second":  (87, 99, 255),
-                        "text": (255, 255, 255), "shadow": (46, 54, 163)}} # second is the color when the mouse is on the button
+COLORS = {"title": (255, 0, 0), "score": (255, 255, 0), "timer": (255, 0, 0),
+            "buttons": {"default": (0, 204, 102), "second":  (0, 255, 128),
+                        "text": (255, 255, 255), "shadow": (255, 255, 255)}} # second is the color when the mouse is on the button
 
 # sounds / music
-MUSIC_VOLUME = 0.16 # value between 0 and 1
+MUSIC_VOLUME = 0.5 # value between 0 and 1
 SOUNDS_VOLUME = 1
 
 # fonts
