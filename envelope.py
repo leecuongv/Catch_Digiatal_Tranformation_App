@@ -4,11 +4,11 @@ import time
 import image
 from settings import *
 
-class Mosquito:
+class Envelope:
     def __init__(self):
         #size
-        random_size_value = random.uniform(MOSQUITO_SIZE_RANDOMIZE[0], MOSQUITO_SIZE_RANDOMIZE[1])
-        size = (int(MOSQUITOS_SIZES[0] * random_size_value), int(MOSQUITOS_SIZES[1] * random_size_value))
+        random_size_value = random.uniform(ENVELOPE_SIZE_RANDOMIZE[0], ENVELOPE_SIZE_RANDOMIZE[1])
+        size = (int(ENVELOPES_SIZES[0] * random_size_value), int(ENVELOPES_SIZES[1] * random_size_value))
         # moving
         moving_direction, start_pos = self.define_spawn_pos(size)
         # sprite
@@ -20,8 +20,8 @@ class Mosquito:
         self.animation_timer = 0
 
 
-    def define_spawn_pos(self, size): # define the start pos and moving vel of the mosquito
-        vel = random.uniform(MOSQUITOS_MOVE_SPEED["min"], MOSQUITOS_MOVE_SPEED["max"])
+    def define_spawn_pos(self, size): # define the start pos and moving vel of the envelope
+        vel = random.uniform(ENVELOPES_MOVE_SPEED["min"], ENVELOPES_MOVE_SPEED["max"])
         moving_direction = random.choice(("left", "right", "up", "down"))
         if moving_direction == "right":
             start_pos = (-size[0], random.randint(size[1], SCREEN_HEIGHT-size[1]))
@@ -63,6 +63,6 @@ class Mosquito:
             self.draw_hitbox(surface)
 
 
-    def kill(self, mosquitos): # remove the mosquito from the list
-        mosquitos.remove(self)
+    def kill(self, envelopes): # remove the envelope from the list
+        envelopes.remove(self)
         return 1

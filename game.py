@@ -5,8 +5,8 @@ from settings import *
 from background import Background
 from hand import Hand
 from hand_tracking import HandTracking
-from mosquito import Mosquito
-from bee import Bee
+from envelope import Envelope
+from cat import Cat
 import cv2
 import ui
 
@@ -37,18 +37,18 @@ class Game:
     def spawn_insects(self):
         t = time.time()
         if t > self.insects_spawn_timer:
-            self.insects_spawn_timer = t + MOSQUITOS_SPAWN_TIME
+            self.insects_spawn_timer = t + ENVELOPES_SPAWN_TIME
 
-            # increase the probability that the insect will be a bee over time
+            # increase the probability that the insect will be a cat over time
             nb = (GAME_DURATION-self.time_left)/GAME_DURATION * 100  / 2  # increase from 0 to 50 during all  the game (linear)
             if random.randint(0, 100) < nb:
-                self.insects.append(Bee())
+                self.insects.append(Cat())
             else:
-                self.insects.append(Mosquito())
+                self.insects.append(Envelope())
 
-            # spawn a other mosquito after the half of the game
+            # spawn a other envelope after the half of the game
             if self.time_left < GAME_DURATION/2:
-                self.insects.append(Mosquito())
+                self.insects.append(Envelope())
 
     def load_camera(self):
         

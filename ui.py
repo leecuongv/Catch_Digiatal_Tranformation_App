@@ -28,8 +28,8 @@ def button(surface, pos_y, text=None, click_sound=None):
     else:
         color = COLORS["buttons"]["default"]
 
-    pygame.draw.rect(surface, COLORS["buttons"]["shadow"], (rect.x - 6, rect.y - 6, rect.w, rect.h)) # draw the shadow rectangle
-    pygame.draw.rect(surface, color, rect) # draw the rectangle
+    pygame.draw.rect(surface, COLORS["buttons"]["shadow"], (rect.x - 6, rect.y - 6, rect.w, rect.h), border_radius=20) # draw the shadow rectangle
+    pygame.draw.rect(surface, color, rect, border_radius=20) # draw the rectangle
     # draw the text
     if text is not None:
         draw_text(surface, text, rect.center, COLORS["buttons"]["text"], pos_mode="center",
