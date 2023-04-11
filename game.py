@@ -51,6 +51,7 @@ class Game:
                 self.insects.append(Mosquito())
 
     def load_camera(self):
+        
         _, self.frame = self.cap.read()
 
 
@@ -79,11 +80,12 @@ class Game:
     def game_time_update(self):
         self.time_left = max(round(GAME_DURATION - (time.time() - self.game_start_time), 1), 0)
 
-
+    def load_cam(self):
+        self.load_camera()
 
     def update(self):
 
-        self.load_camera()
+        #self.load_camera()
         self.set_hand_position()
         self.game_time_update()
 

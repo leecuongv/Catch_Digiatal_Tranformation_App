@@ -1,9 +1,13 @@
 import pygame
+import pyautogui
+
+screenWidth, screenHeight = pyautogui.size()
+
 
 WINDOW_NAME = "Mosquito Exterminator"
 GAME_TITLE = WINDOW_NAME
 
-SCREEN_WIDTH, SCREEN_HEIGHT = 1600, 900
+SCREEN_WIDTH, SCREEN_HEIGHT = pyautogui.size()
 
 FPS = 90
 DRAW_FPS = True
@@ -24,10 +28,10 @@ DRAW_HITBOX = False # will draw all the hitbox
 ANIMATION_SPEED = 0.08 # the frame of the insects will change every X sec
 
 # difficulty
-GAME_DURATION = 60 # the game will last X sec
+GAME_DURATION = 40 # the game will last X sec
 MOSQUITOS_SPAWN_TIME = 1
 MOSQUITOS_MOVE_SPEED = {"min": 1, "max": 5}
-BEE_PENALITY = 1 # will remove X of the score of the player (if he kills a bee)
+BEE_PENALITY = 2 # will remove X of the score of the player (if he kills a bee)
 
 # colors
 COLORS = {"title": (38, 61, 39), "score": (38, 61, 39), "timer": (38, 61, 39),

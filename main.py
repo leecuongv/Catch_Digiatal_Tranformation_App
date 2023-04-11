@@ -2,11 +2,10 @@
 import pygame
 import sys
 import os
+
 from settings import *
 from game import Game
 from menu import Menu
-
-
 
 
 # Setup pygame/window --------------------------------------------- #
@@ -37,13 +36,15 @@ menu = Menu(SCREEN)
 def user_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+            print("quit")
+            #pygame.quit()
+            #sys.exit()
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                pygame.quit()
-                sys.exit()
+                print("quit")
+                #pygame.quit()
+                #sys.exit()
 
 
 def update():
@@ -53,6 +54,7 @@ def update():
             game.reset() # reset the game to start a new game
             state = "game"
     elif state == "game":
+        #game.load_cam()
         if game.update() == "menu":
             state = "menu"
     pygame.display.update()
@@ -62,7 +64,7 @@ def update():
 
 # Loop ------------------------------------------------------------ #
 while True:
-
+    game.load_cam()
     # Buttons ----------------------------------------------------- #
     user_events()
 
