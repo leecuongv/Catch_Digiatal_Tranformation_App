@@ -4,7 +4,7 @@ import pyautogui
 screenWidth, screenHeight = pyautogui.size()
 
 
-WINDOW_NAME = "CATCH PRODUCT"
+WINDOW_NAME = ""
 GAME_TITLE = WINDOW_NAME
 
 SCREEN_WIDTH, SCREEN_HEIGHT = pyautogui.size()
