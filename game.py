@@ -69,11 +69,11 @@ class Game:
         # draw the hand
         self.hand.draw(self.surface)
         # draw the score
-        ui.draw_text(self.surface, f"Score : {self.score}", (5, 5), COLORS["score"], font=FONTS["medium"],
+        ui.draw_text(self.surface, f"Score : {self.score}", (300, 5), COLORS["score"], font=FONTS["medium"],
                     shadow=False, shadow_color=(255,255,255))
         # draw the time left
         timer_text_color = (160, 40, 0) if self.time_left < 5 else COLORS["timer"] # change the text color if less than 5 s left
-        ui.draw_text(self.surface, f"Time left : {self.time_left}", (SCREEN_WIDTH//2, 5),  timer_text_color, font=FONTS["medium"],
+        ui.draw_text(self.surface, f"Time left : {self.time_left}", (SCREEN_WIDTH//2 + 200, 5),  timer_text_color, font=FONTS["medium"],
                     shadow=False, shadow_color=(255,255,255))
 
 

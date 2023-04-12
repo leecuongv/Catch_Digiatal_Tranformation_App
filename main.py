@@ -37,14 +37,14 @@ def user_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             print("quit")
-            #pygame.quit()
-            #sys.exit()
+            pygame.quit()
+            sys.exit()
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 print("quit")
-                #pygame.quit()
-                #sys.exit()
+                pygame.quit()
+                sys.exit()
 
 
 def update():
@@ -54,7 +54,6 @@ def update():
             game.reset() # reset the game to start a new game
             state = "game"
     elif state == "game":
-        #game.load_cam()
         if game.update() == "menu":
             state = "menu"
     pygame.display.update()
